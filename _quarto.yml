@@ -14,7 +14,8 @@ book:
   ## WORKFLOW
     - part: "Workflows"
       chapters:
-      - posts/workflow_research.qmd
+      - posts/scripts_and_workflow.qmd
+      - posts/project_setup.qmd
     - part: "Analyses"
     - part: "Plots"
     - part: "Tables"

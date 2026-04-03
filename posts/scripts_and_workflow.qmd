@@ -1,0 +1,55 @@
+# Script Practices {.unnumbered}
+- clear and organised scripts
+- modular code that is easy to read and maintain
+- clear workflow and order of operations
+
+## organisation
+- one script = one purpose 
+- avoid combining stages of large analyses 
+- keep scripts short 
+
+Example layout of script folder:
+```
+R/
+├── 01_data_processing.R   # scripts for cleaning and processing data
+├── 02_linear_models.R     # scripts for running linear models 
+├── utilities.R           # scripts for functions that are used across multiple analyses
+├── functions_data_processing.R  # scripts for functions that are specific to data processing
+```
+
+## functions 
+- any repeated logic gets moved to functions 
+- if repeated across different tasks -> `utilities.R`
+- if task-specific -> `functions_01_data_cleaning.R`
+- source those scripts when needed in analyses 
+
+## style conventions 
+- Use pipes: `|>`
+- one step per line 
+
+```{r, eval=FALSE, run=FALSE}
+df |>
+    dplyr::filter(age > 18) |>  
+    dplyr::mutate(age_group = ifelse(age < 30, "young", "old")) |>
+    dplyr::group_by(age_group) |>
+    dplyr::summarise(mean_income = mean(income))
+```
+
+## naming conventions 
+- use `snake_case` for everything
+- clear descriptive names (not `df1`)
+- objects start with noun (e.g., `df_*` or `mod_*`)
+- functions start with verb (e.g., `clean_`, `fit_`)
+
+## ordering and flow 
+- if structure begins to exist (e.g., order of scripts) use `targets`
+- removes manual ordering and execution 
+- tracks dependencies 
+```{r, eval = FALSE, run = FALSE}
+list(
+  tar_target(raw, get_data()),
+  tar_target(cleaned, clean_data(raw)),
+  tar_target(model, fit_linear_model(cleaned)),
+  tar_target(plot, create_plot(model))
+)
+```

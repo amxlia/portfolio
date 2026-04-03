@@ -1,0 +1,77 @@
+# Project Setup {.unnumbered}
+## purpose
+- keep everything organised 
+- reproducible and transparent structure 
+- clear workflow/file organisation 
+
+## structure 
+- create project root folder
+- open in software 
+```
+project/
+
+├── R/
+├── data/
+│   ├── raw/        # source data (never edited)
+│   ├── versions/   # timestamped snapshots
+│   ├── processed/  # cleaned / merged
+│   └── final/      # datasets used for analysis / sharing
+├── outputs/        # figures, tables, model objects
+├── docs/           # protocols, codebooks, notes
+├── renv.lock
+```
+**notes**:
+- root folder always treated as root 
+- no `setwd()`
+- all paths relative 
+- never change raw data 
+
+## environment 
+initialise on first open: 
+```{r, eval = FALSE}
+# create renv and lockfile in root folder 
+renv::init()
+
+# install packages 
+install.packages(c("tidyverse", "here", "renv", "usethis", "devtools"))
+
+# snapshot to save in lockfile for reproducibility and collaboration
+renv::snapshot()
+```
+
+**notes**: 
+- `renv.lockfile` tracks package versions 
+- collaborators use `renv::restore()` to get same environment  
+
+## paths 
+- anchor scripts using `here` package 
+- avoid using absolute paths 
+```{r, run = FALSE, eval = FALSE}
+# shows where file is saved relative to root 
+here::i_am("R/01_data_processing.R")
+
+# import data using relative paths
+readr::read_csv(here::here("data/raw/survey_data_raw.csv"))
+```
+
+## secrets 
+- use `usethis` to create `.Renviron` file in root folder and add secrets in there 
+- for example: API keys, database credentials etc. 
+- github will ignore this file so its not shared with collaborators 
+
+```{r, run = FALSE, eval = FALSE} 
+usethis::edit_r_environ()
+```
+- after running, edit `.Renviron` file 
+- format specifically: 
+```
+API_KEY="your_api_key_here"
+DB_USERNAME="your_db_username_here"
+DB_PASSWORD="your_db_password_here"
+```
+after saving the `.Renviron` file, access the secrets in your R code:
+```{r, run=FALSE, evaluate=FALSE}
+api_key <- Sys.getenv("API_KEY")
+db_username <- Sys.getenv("DB_USERNAME")
+db_password <- Sys.getenv("DB_PASSWORD")
+```

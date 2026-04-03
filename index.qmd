@@ -1,13 +1,16 @@
 # Welcome {.unnumbered}
 
-This site is essentially a living lab notebook; a collection of data-related info I have documented throughout my career (e.g., my approaches, projects, learnings, and interests). This includes work in various fields (such as psychology/social psychology, epidemiology), and is built openly and documented thoroughly. 
+This site is essentially a living lab notebook; a running collection of how I work with data over time.
 
-All data used here is simulated or publicly available, and the focus is not on any particular finding, but my **approach** and **processes** involved in conducting rigorous, transparent, and reproducible research. 
+It brings together my approaches, projects, and things I have learned along the way. Everything here is built openly and documented as I go. 
 
-I like to think of this as a portfolio of my work, and a resource for others who are interested in learning about data science and analyses, research methods, and open science. 
+All data used here is simulated or publicly available, and the focus is on my **approach** and **processes** to conducting rigorous, transparent, and reproducible research, rather than on particular findings. 
 
-For **prospective collaborators and employers**, this serves as a transparent record of how I think through analytical problems and make decisions, how I move from research questions to particular analyses, how I interpret and communicate findings, and how I write code that someone else can potentially learn from and re-use.  
+I like to think of this as both a portfolio, and a working record. 
 
-For **students and early career researchers**, this can potentially serve as a practical teaching resource. Each analysis is annotated with *what* I did and *why*. I hope that I can share my learnings and approaches in a way that is useful for others, and that it can be a useful resource for those who are learning about data science, research methods, and open science. 
+For **prospective collaborators and employers**, this serves as a transparent record of how I think through analytical problems and make decisions, from framing research questions, to choosing methods of analysis, to conducting/interpreting and communicating results. 
 
-If you are interested in learning more about my work, have found something useful or have questions, maybe even spotted an error, please feel free to reach out! You can find me on [LinkedIn](https://www.linkedin.com/in/amelia-henry/) or [email](mailto:amelia.henry@sydney.edu.au).
+For **students and early career researchers**, this can potentially serve as a learning resource. Most posts include comments/annotations outlining *what* I did, but more importantly *why*. 
+
+If you find something useful, have any questions, notice something is off/spotted an error, or just want to chat, feel free to reach out! 
+You can find me on [LinkedIn](https://www.linkedin.com/in/amelia-henry/) or [email](mailto:amelia.henry@sydney.edu.au).

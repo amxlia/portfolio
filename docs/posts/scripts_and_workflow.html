@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Amelia Henry</title>
+<title>Script Practices – Amelia Henry</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,23 +23,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<link href="./posts/scripts_and_workflow.html" rel="next">
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-176b38be48070efe3d434d0a95bef3fe.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-77dc8a1ec4e78a3599593794a285cb7f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../posts/project_setup.html" rel="next">
+<link href="../index.html" rel="prev">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-176b38be48070efe3d434d0a95bef3fe.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-77dc8a1ec4e78a3599593794a285cb7f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -68,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../posts/scripts_and_workflow.html">Workflows</a></li><li class="breadcrumb-item"><a href="../posts/scripts_and_workflow.html">Script Practices</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -80,14 +116,14 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Amelia Henry</a> 
+      <a href="../">Amelia Henry</a> 
     </div>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -102,13 +138,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/scripts_and_workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/scripts_and_workflow.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Script Practices</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/project_setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/project_setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Setup</span></a>
   </div>
 </li>
@@ -143,9 +179,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../posts/scripts_and_workflow.html">Workflows</a></li><li class="breadcrumb-item"><a href="../posts/scripts_and_workflow.html">Script Practices</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Amelia Henry</h1>
+<h1 class="title">Script Practices</h1>
 </div>
 
 
@@ -162,15 +198,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>This site is essentially a living lab notebook; a running collection of how I work with data over time.</p>
-<p>It brings together my approaches, projects, and things I have learned along the way. Everything here is built openly and documented as I go.</p>
-<p>All data used here is simulated or publicly available, and the focus is on my <strong>approach</strong> and <strong>processes</strong> to conducting rigorous, transparent, and reproducible research, rather than on particular findings.</p>
-<p>I like to think of this as both a portfolio, and a working record.</p>
-<p>For <strong>prospective collaborators and employers</strong>, this serves as a transparent record of how I think through analytical problems and make decisions, from framing research questions, to choosing methods of analysis, to conducting/interpreting and communicating results.</p>
-<p>For <strong>students and early career researchers</strong>, this can potentially serve as a learning resource. Most posts include comments/annotations outlining <em>what</em> I did, but more importantly <em>why</em>.</p>
-<p>If you find something useful, have any questions, notice something is off/spotted an error, or just want to chat, feel free to reach out! You can find me on <a href="https://www.linkedin.com/in/amelia-henry/">LinkedIn</a> or <a href="mailto:amelia.henry@sydney.edu.au">email</a>.</p>
+<ul>
+<li>clear and organised scripts</li>
+<li>modular code that is easy to read and maintain</li>
+<li>clear workflow and order of operations</li>
+</ul>
+<section id="organisation" class="level2">
+<h2 class="anchored" data-anchor-id="organisation">organisation</h2>
+<ul>
+<li>one script = one purpose</li>
+<li>avoid combining stages of large analyses</li>
+<li>keep scripts short</li>
+</ul>
+<p>Example layout of script folder:</p>
+<pre><code>R/
+├── 01_data_processing.R   # scripts for cleaning and processing data
+├── 02_linear_models.R     # scripts for running linear models 
+├── utilities.R           # scripts for functions that are used across multiple analyses
+├── functions_data_processing.R  # scripts for functions that are specific to data processing</code></pre>
+</section>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">functions</h2>
+<ul>
+<li>any repeated logic gets moved to functions</li>
+<li>if repeated across different tasks -&gt; <code>utilities.R</code></li>
+<li>if task-specific -&gt; <code>functions_01_data_cleaning.R</code></li>
+<li>source those scripts when needed in analyses</li>
+</ul>
+</section>
+<section id="style-conventions" class="level2">
+<h2 class="anchored" data-anchor-id="style-conventions">style conventions</h2>
+<ul>
+<li>Use pipes: <code>|&gt;</code></li>
+<li>one step per line</li>
+</ul>
+<div class="cell" data-run="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">18</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">age_group =</span> <span class="fu">ifelse</span>(age <span class="sc">&lt;</span> <span class="dv">30</span>, <span class="st">"young"</span>, <span class="st">"old"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(age_group) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">mean_income =</span> <span class="fu">mean</span>(income))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="naming-conventions" class="level2">
+<h2 class="anchored" data-anchor-id="naming-conventions">naming conventions</h2>
+<ul>
+<li>use <code>snake_case</code> for everything</li>
+<li>clear descriptive names (not <code>df1</code>)</li>
+<li>objects start with noun (e.g., <code>df_*</code> or <code>mod_*</code>)</li>
+<li>functions start with verb (e.g., <code>clean_</code>, <code>fit_</code>)</li>
+</ul>
+</section>
+<section id="ordering-and-flow" class="level2">
+<h2 class="anchored" data-anchor-id="ordering-and-flow">ordering and flow</h2>
+<ul>
+<li>if structure begins to exist (e.g., order of scripts) use <code>targets</code></li>
+<li>removes manual ordering and execution</li>
+<li>tracks dependencies</li>
+</ul>
+<div class="cell" data-run="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar_target</span>(raw, <span class="fu">get_data</span>()),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar_target</span>(cleaned, <span class="fu">clean_data</span>(raw)),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar_target</span>(model, <span class="fu">fit_linear_model</span>(cleaned)),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar_target</span>(plot, <span class="fu">create_plot</span>(model))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 </section>
@@ -578,10 +671,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="Welcome">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./posts/scripts_and_workflow.html" class="pagination-link" aria-label="Script Practices">
-        <span class="nav-page-text">Script Practices</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../posts/project_setup.html" class="pagination-link" aria-label="Project Setup">
+        <span class="nav-page-text">Project Setup</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
