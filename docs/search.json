@@ -283,5 +283,82 @@
       "Introduction",
       "About Me"
     ]
+  },
+  {
+    "objectID": "posts/icare.html",
+    "href": "posts/icare.html",
+    "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
+    "section": "",
+    "text": "Modelling Alcohol and Other Drug Use, Psychological Distress, and Occupational Functioning in Australian Public Safety Personnel\n(full script at bottom of page)",
+    "crumbs": [
+      "Projects",
+      "Negative Binomial Hurdle Models with Zero-Heavy Count Data"
+    ]
+  },
+  {
+    "objectID": "posts/icare.html#overview",
+    "href": "posts/icare.html#overview",
+    "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
+    "section": "Overview",
+    "text": "Overview\nExamining how alcohol and other drug use and psychological distress relate to absenteeism and presenteeism in public safety personnel.\nKey Variables:\n\nPsychological distress (K10)\nSubstance Use (ASSIST)\nWorkplace Outcomes\n\nOutcomes:\n\nAbsenteeism and Presenteeism (from k10+)\nCount data with many zeros",
+    "crumbs": [
+      "Projects",
+      "Negative Binomial Hurdle Models with Zero-Heavy Count Data"
+    ]
+  },
+  {
+    "objectID": "posts/icare.html#data-pre-processing",
+    "href": "posts/icare.html#data-pre-processing",
+    "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
+    "section": "Data Pre-processing",
+    "text": "Data Pre-processing\nCleaning was mostly focused on producing an analysis-ready dataset, as data were already in usable format. See diagram below for an overview of the full process.\n\n\nOption 2: Slightly more “decision-focused”\n\n\n\n\n\nflowchart TD\n\nA[Raw survey export] --&gt; B[Variable inspection & renaming]\nB --&gt; C[Scale scoring]\n\nC --&gt; C1[K10 total score]\nC --&gt; C2[ASSIST alcohol score]\n\nC1 --&gt; D[Outcome preparation]\nC2 --&gt; D\n\nD --&gt; D1[Absenteeism (days out of role)]\nD --&gt; D2[Presenteeism (days not functioning)]\n\nD1 --&gt; E[Data checks]\nD2 --&gt; E\n\nE --&gt; F[Final dataset (df_clean)]",
+    "crumbs": [
+      "Projects",
+      "Negative Binomial Hurdle Models with Zero-Heavy Count Data"
+    ]
+  },
+  {
+    "objectID": "posts/icare.html#research-questionaims",
+    "href": "posts/icare.html#research-questionaims",
+    "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
+    "section": "Research Question/Aims",
+    "text": "Research Question/Aims\n\nExamine rates of severity of alcohol and other drug (AOD) use among public safety personnel (PSP)\nExamine associations between AOD use, psychological distress, and occupational functioning (absenteeism and presenteeism) among PSP\nExamine whether AOD use and psychological distress predict impairment to occupational function, both independently, and in combination",
+    "crumbs": [
+      "Projects",
+      "Negative Binomial Hurdle Models with Zero-Heavy Count Data"
+    ]
+  },
+  {
+    "objectID": "posts/icare.html#data-pre-processingscreening",
+    "href": "posts/icare.html#data-pre-processingscreening",
+    "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
+    "section": "Data Pre-processing/Screening",
+    "text": "Data Pre-processing/Screening\nInitial visualisation of absenteeism and presenteeism showed:\n\nstrong right-skew\nlarge proportion of zeros\n\n\ndf %&gt;% \n  dplyr::select(\n    Absenteeism = k10_11_absenteeism, Presenteeism = k10_12_presenteeism) |&gt; \n  pivot_longer(\n    cols = c(Absenteeism, Presenteeism),\n    names_to = \"Variable\",\n    values_to = \"Days\") |&gt; \n    filter(!is.na(Days)) |&gt; \n    gghistogram(\n        x = \"Days\", \n        y = \"count\", \n        xlab = \"Days\", \n        ylab = FALSE, \n        add = \"median\",\n        facet.by = \"Variable\", \n        binwidth = 1\n    ) +\n    scale_x_continuous(breaks = seq(0, 30, by = 2))\n\n\n\n\n\n\n\n\nnote: suggests standard linear models would be inappropriate. count-based better",
+    "crumbs": [
+      "Projects",
+      "Negative Binomial Hurdle Models with Zero-Heavy Count Data"
+    ]
+  },
+  {
+    "objectID": "posts/icare.html#model-selection",
+    "href": "posts/icare.html#model-selection",
+    "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
+    "section": "Model selection",
+    "text": "Model selection\nGiven the distributional properties of absenteeism and presenteeism, I considered several candidate models:\n\nPoisson regression\nNegative binomial regression\nZero-inflated Poisson (ZIP)\nZero-inflated negative binomial models (ZINB)\nHurdle negative binomial models\n\n\nConsiderations:\nOverdispersion: Poisson models assume that the mean = variance. Preliminary checks indicated overdispersion, making Poisson models unsuitable.\nExcess zeros: The data contained more zeros than expected under standard count models. This raises 2 choices:\n\nZero inflated models: assume two latent groups (always-zero vs always at-risk)\nHurdle models: assume a two-stage process (zero vs positive counts)",
+    "crumbs": [
+      "Projects",
+      "Negative Binomial Hurdle Models with Zero-Heavy Count Data"
+    ]
+  },
+  {
+    "objectID": "posts/icare.html#modelling-strategy",
+    "href": "posts/icare.html#modelling-strategy",
+    "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
+    "section": "Modelling strategy",
+    "text": "Modelling strategy\n\nUnivariate models - all types\nHere I made a function that ran a series of univariate models on each outcome to check dispersion This helped to evaluate which count model handled the outcome data the best. Univariate predictors included age, gender, years of employment, k10 total score, maximum alcohol use risk score, and maximum other drug use risk score.\nModels were compared using: AIC/BIC (fit), dispersion stats, vuong tests, predicted vs observed zeros.\nAlthough zero-inflated models and hurdle models were basically the same, MS and I discussed the choice from a conceptual angle, and we agreed that the zero-inflation was too rigid with the “always-zero” or “always at-risk” approach.\nGiven we are looking at absenteeism and presenteeism, days of each is unlikely to be always.\nSo we chose Hurdle Negative Binomial Models.\n\nReasons:\n\nthey count for overdispersion\nexplicitly model the probability of any absenteeism/presenteeism (logistic) and the frequency of absenteeism/presenteeism among those who didn’t have zero values (count)\nconceptually, they distinguish between whether someone is absent and how often they are absent.\nmore aligned with our aims/RQs\n\nOnce Hurdle Models were chosen, each predictor was first examined in isolation to:\n\nidentify potential associations\nunderstand variable-specific effects\nprovide context before multivariable analyses",
+    "crumbs": [
+      "Projects",
+      "Negative Binomial Hurdle Models with Zero-Heavy Count Data"
+    ]
   }
 ]

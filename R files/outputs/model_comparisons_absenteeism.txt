@@ -1,0 +1,1045 @@
+
+============================
+Variable: age 
+============================
+
+Dispersion (Poisson): 3.22 
+
+AIC Comparison:
+          df       AIC
+pois       2 1507.3199
+nb         3  597.0483
+zip        4  847.1649
+zinb       5  594.0800
+hurdle_nb  5  599.0788
+
+BIC Comparison:
+          df       BIC
+pois       2 1513.9165
+nb         3  606.9433
+zip        4  860.3582
+zinb       5  610.5716
+hurdle_nb  5  615.5704
+
+AIC Comparison:
+          df       AIC
+pois       2 1507.3199
+nb         3  597.0483
+zip        4  847.1649
+zinb       5  594.0800
+hurdle_nb  5  599.0788
+
+BIC Comparison:
+          df       BIC
+pois       2 1513.9165
+nb         3  606.9433
+zip        4  860.3582
+zinb       5  610.5716
+hurdle_nb  5  615.5704
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A       p-value
+Raw                   -4.904509 model2 > model1 0.00000046831
+AIC-corrected         -4.874971 model2 > model1 0.00000054412
+BIC-corrected         -4.826258 model2 > model1 0.00000069561
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A p-value
+Raw                  -1.2023226 model2 > model1 0.11462
+AIC-corrected        -0.5121595 model2 > model1 0.30427
+BIC-corrected         0.6260290 model1 > model2 0.26565
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A    p-value
+Raw                  -0.7800000 model2 > model1 0.21769545
+AIC-corrected         0.8041611 model1 > model2 0.21065198
+BIC-corrected         3.4166940 model1 > model2 0.00031693
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.
+
+============================
+Variable: gender 
+============================
+
+Dispersion (Poisson): 3.52 
+
+AIC Comparison:
+          df       AIC
+pois       2 1329.7011
+nb         3  553.6017
+zip        4  731.9105
+zinb       5  554.9425
+hurdle_nb  5  554.9425
+
+BIC Comparison:
+          df       BIC
+pois       2 1336.3077
+nb         3  563.5116
+zip        4  745.1237
+zinb       5  571.4590
+hurdle_nb  5  571.4590
+
+AIC Comparison:
+          df       AIC
+pois       2 1329.7011
+nb         3  553.6017
+zip        4  731.9105
+zinb       5  554.9425
+hurdle_nb  5  554.9425
+
+BIC Comparison:
+          df       BIC
+pois       2 1336.3077
+nb         3  563.5116
+zip        4  745.1237
+zinb       5  571.4590
+hurdle_nb  5  571.4590
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A       p-value
+Raw                   -5.089206 model2 > model1 0.00000017978
+AIC-corrected         -5.055379 model2 > model1 0.00000021477
+BIC-corrected         -4.999508 model2 > model1 0.00000028738
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A   p-value
+Raw                  -0.9820885 model2 > model1 0.1630281
+AIC-corrected         0.4951738 model1 > model2 0.3102387
+BIC-corrected         2.9350977 model1 > model2 0.0016672
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A   p-value
+Raw                  -0.9821408 model2 > model1 0.1630152
+AIC-corrected         0.4952002 model1 > model2 0.3102294
+BIC-corrected         2.9352540 model1 > model2 0.0016664
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.
+
+============================
+Variable: agency_years 
+============================
+
+Dispersion (Poisson): 3.15 
+
+AIC Comparison:
+          df       AIC
+pois       2 1541.8004
+nb         3  621.8823
+zip        4  876.5553
+zinb       5  624.5218
+hurdle_nb  5  624.5902
+
+BIC Comparison:
+          df       BIC
+pois       2 1548.4851
+nb         3  631.9093
+zip        4  889.9247
+zinb       5  641.2334
+hurdle_nb  5  641.3019
+
+AIC Comparison:
+          df       AIC
+pois       2 1541.8004
+nb         3  621.8823
+zip        4  876.5553
+zinb       5  624.5218
+hurdle_nb  5  624.5902
+
+BIC Comparison:
+          df       BIC
+pois       2 1548.4851
+nb         3  631.9093
+zip        4  889.9247
+zinb       5  641.2334
+hurdle_nb  5  641.3019
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A       p-value
+Raw                   -5.052091 model2 > model1 0.00000021850
+AIC-corrected         -5.021895 model2 > model1 0.00000025582
+BIC-corrected         -4.971433 model2 > model1 0.00000033230
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A     p-value
+Raw                  -0.6601482 model2 > model1     0.25458
+AIC-corrected         1.2807125 model1 > model2     0.10015
+BIC-corrected         4.5242153 model1 > model2 0.000003031
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A      p-value
+Raw                  -0.6416729 model2 > model1     0.260543
+AIC-corrected         1.3447882 model1 > model2     0.089347
+BIC-corrected         4.6644967 model1 > model2 0.0000015469
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.
+
+============================
+Variable: k10_total 
+============================
+
+Dispersion (Poisson): 3.06 
+
+AIC Comparison:
+          df       AIC
+pois       2 1021.2974
+nb         3  573.1824
+zip        4  703.1920
+zinb       5  561.2953
+hurdle_nb  5  562.5900
+
+BIC Comparison:
+          df       BIC
+pois       2 1028.0199
+nb         3  583.2663
+zip        4  716.6372
+zinb       5  578.1018
+hurdle_nb  5  579.3965
+
+AIC Comparison:
+          df       AIC
+pois       2 1021.2974
+nb         3  573.1824
+zip        4  703.1920
+zinb       5  561.2953
+hurdle_nb  5  562.5900
+
+BIC Comparison:
+          df       BIC
+pois       2 1028.0199
+nb         3  583.2663
+zip        4  716.6372
+zinb       5  578.1018
+hurdle_nb  5  579.3965
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A     p-value
+Raw                   -4.248257 model2 > model1 0.000010772
+AIC-corrected         -4.195501 model2 > model1 0.000013613
+BIC-corrected         -4.106837 model2 > model1 0.000020056
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A  p-value
+Raw                  -2.1569194 model2 > model1 0.015506
+AIC-corrected        -1.6138566 model2 > model1 0.053279
+BIC-corrected        -0.7011602 model2 > model1 0.241602
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A  p-value
+Raw                  -1.9432815 model2 > model1 0.025991
+AIC-corrected        -1.4105966 model2 > model1 0.079182
+BIC-corrected        -0.5153419 model2 > model1 0.303157
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.
+
+============================
+Variable: rtc_3_readiness 
+============================
+
+Dispersion (Poisson): 3.01 
+
+AIC Comparison:
+          df       AIC
+pois       2 1425.3076
+nb         3  591.2236
+zip        4  819.6208
+zinb       5  593.8084
+hurdle_nb  5  593.8191
+
+BIC Comparison:
+          df       BIC
+pois       2 1431.9340
+nb         3  601.1632
+zip        4  832.8736
+zinb       5  610.3745
+hurdle_nb  5  610.3852
+
+AIC Comparison:
+          df       AIC
+pois       2 1425.3076
+nb         3  591.2236
+zip        4  819.6208
+zinb       5  593.8084
+hurdle_nb  5  593.8191
+
+BIC Comparison:
+          df       BIC
+pois       2 1431.9340
+nb         3  601.1632
+zip        4  832.8736
+zinb       5  610.3745
+hurdle_nb  5  610.3852
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A       p-value
+Raw                   -4.867857 model2 > model1 0.00000056407
+AIC-corrected         -4.835920 model2 > model1 0.00000066265
+BIC-corrected         -4.783014 model2 > model1 0.00000086343
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A      p-value
+Raw                  -0.6815632 model2 > model1      0.24776
+AIC-corrected         1.2449320 model1 > model2      0.10658
+BIC-corrected         4.4363696 model1 > model2 0.0000045744
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A      p-value
+Raw                  -0.6805107 model2 > model1      0.24809
+AIC-corrected         1.2576753 model1 > model2      0.10425
+BIC-corrected         4.4684801 model1 > model2 0.0000039389
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.
+
+============================
+Variable: recent_drug_user 
+============================
+
+Dispersion (Poisson): 3.15 
+
+AIC Comparison:
+          df       AIC
+pois       2 1541.7341
+nb         3  629.5369
+zip        4  875.3929
+zinb       5  623.3951
+hurdle_nb  5  623.3951
+
+BIC Comparison:
+          df       BIC
+pois       2 1548.4567
+nb         3  639.6208
+zip        4  888.8381
+zinb       5  640.2016
+hurdle_nb  5  640.2016
+
+AIC Comparison:
+          df       AIC
+pois       2 1541.7341
+nb         3  629.5369
+zip        4  875.3929
+zinb       5  623.3951
+hurdle_nb  5  623.3951
+
+BIC Comparison:
+          df       BIC
+pois       2 1548.4567
+nb         3  639.6208
+zip        4  888.8381
+zinb       5  640.2016
+hurdle_nb  5  640.2016
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A       p-value
+Raw                   -4.777935 model2 > model1 0.00000088552
+AIC-corrected         -4.749425 model2 > model1 0.00000101998
+BIC-corrected         -4.701509 model2 > model1 0.00000129123
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A  p-value
+Raw                 -1.59235456 model2 > model1 0.055653
+AIC-corrected       -0.96432022 model2 > model1 0.167443
+BIC-corrected        0.09118322 model1 > model2 0.463674
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A  p-value
+Raw                 -1.59235313 model2 > model1 0.055653
+AIC-corrected       -0.96431936 model2 > model1 0.167443
+BIC-corrected        0.09118314 model1 > model2 0.463674
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.
+
+============================
+Variable: recent_alcohol_user 
+============================
+
+Dispersion (Poisson): 3.16 
+
+AIC Comparison:
+          df       AIC
+pois       2 1554.7469
+nb         3  630.4467
+zip        4  881.5453
+zinb       5  632.9817
+hurdle_nb  5  632.9817
+
+BIC Comparison:
+          df       BIC
+pois       2 1561.4695
+nb         3  640.5306
+zip        4  894.9905
+zinb       5  649.7881
+hurdle_nb  5  649.7881
+
+AIC Comparison:
+          df       AIC
+pois       2 1554.7469
+nb         3  630.4467
+zip        4  881.5453
+zinb       5  632.9817
+hurdle_nb  5  632.9817
+
+BIC Comparison:
+          df       BIC
+pois       2 1561.4695
+nb         3  640.5306
+zip        4  894.9905
+zinb       5  649.7881
+hurdle_nb  5  649.7881
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A       p-value
+Raw                   -5.160458 model2 > model1 0.00000012317
+AIC-corrected         -5.129977 model2 > model1 0.00000014489
+BIC-corrected         -5.078749 model2 > model1 0.00000018996
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A     p-value
+Raw                  -0.6666381 model2 > model1     0.25250
+AIC-corrected         1.1534275 model1 > model2     0.12437
+BIC-corrected         4.2123137 model1 > model2 0.000012638
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A     p-value
+Raw                   -0.666670 model2 > model1     0.25249
+AIC-corrected          1.153483 model1 > model2     0.12436
+BIC-corrected          4.212515 model1 > model2 0.000012627
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.
+
+============================
+Variable: recent_any_user 
+============================
+
+Dispersion (Poisson): 3.11 
+
+AIC Comparison:
+          df       AIC
+pois       2 1545.7950
+nb         3  629.9592
+zip        4  881.2069
+zinb       5  632.6432
+hurdle_nb  5  632.6432
+
+BIC Comparison:
+          df       BIC
+pois       2 1552.5176
+nb         3  640.0431
+zip        4  894.6520
+zinb       5  649.4496
+hurdle_nb  5  649.4496
+
+AIC Comparison:
+          df       AIC
+pois       2 1545.7950
+nb         3  629.9592
+zip        4  881.2069
+zinb       5  632.6432
+hurdle_nb  5  632.6432
+
+BIC Comparison:
+          df       BIC
+pois       2 1552.5176
+nb         3  640.0431
+zip        4  894.6520
+zinb       5  649.4496
+hurdle_nb  5  649.4496
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A       p-value
+Raw                   -5.124554 model2 > model1 0.00000014912
+AIC-corrected         -5.093895 model2 > model1 0.00000017539
+BIC-corrected         -5.042368 model2 > model1 0.00000022990
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A      p-value
+Raw                  -0.6669959 model2 > model1     0.252387
+AIC-corrected         1.3603148 model1 > model2     0.086865
+BIC-corrected         4.7675067 model1 > model2 0.0000009326
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A       p-value
+Raw                  -0.6670132 model2 > model1       0.25238
+AIC-corrected         1.3603500 model1 > model2       0.08686
+BIC-corrected         4.7676299 model1 > model2 0.00000093203
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.
+
+============================
+Variable: poly_drug_user 
+============================
+
+Dispersion (Poisson): 3.12 
+
+AIC Comparison:
+          df       AIC
+pois       2 1535.5311
+nb         3  629.1320
+zip        4  873.0883
+zinb       5  621.0905
+hurdle_nb  5  621.0905
+
+BIC Comparison:
+          df       BIC
+pois       2 1542.2537
+nb         3  639.2159
+zip        4  886.5334
+zinb       5  637.8969
+hurdle_nb  5  637.8969
+
+AIC Comparison:
+          df       AIC
+pois       2 1535.5311
+nb         3  629.1320
+zip        4  873.0883
+zinb       5  621.0905
+hurdle_nb  5  621.0905
+
+BIC Comparison:
+          df       BIC
+pois       2 1542.2537
+nb         3  639.2159
+zip        4  886.5334
+zinb       5  637.8969
+hurdle_nb  5  637.8969
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A      p-value
+Raw                   -4.719402 model2 > model1 0.0000011827
+AIC-corrected         -4.691076 model2 > model1 0.0000013589
+BIC-corrected         -4.643470 model2 > model1 0.0000017130
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A  p-value
+Raw                  -1.7340796 model2 > model1 0.041452
+AIC-corrected        -1.1580483 model2 > model1 0.123422
+BIC-corrected        -0.1899436 model2 > model1 0.424677
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A  p-value
+Raw                   -1.734083 model2 > model1 0.041452
+AIC-corrected         -1.158051 model2 > model1 0.123422
+BIC-corrected         -0.189944 model2 > model1 0.424677
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.
+
+============================
+Variable: alcohol_use_scores 
+============================
+
+Dispersion (Poisson): 2.61 
+
+AIC Comparison:
+          df       AIC
+pois       2 1345.6325
+nb         3  583.9749
+zip        4  802.2164
+zinb       5  576.9752
+hurdle_nb  5  575.6748
+
+BIC Comparison:
+          df       BIC
+pois       2 1352.2291
+nb         3  593.8698
+zip        4  815.4097
+zinb       5  593.4667
+hurdle_nb  5  592.1664
+
+AIC Comparison:
+          df       AIC
+pois       2 1345.6325
+nb         3  583.9749
+zip        4  802.2164
+zinb       5  576.9752
+hurdle_nb  5  575.6748
+
+BIC Comparison:
+          df       BIC
+pois       2 1352.2291
+nb         3  593.8698
+zip        4  815.4097
+zinb       5  593.4667
+hurdle_nb  5  592.1664
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A     p-value
+Raw                   -4.236122 model2 > model1 0.000011371
+AIC-corrected         -4.205169 model2 > model1 0.000013044
+BIC-corrected         -4.154121 model2 > model1 0.000016327
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A  p-value
+Raw                 -1.71827014 model2 > model1 0.042874
+AIC-corrected       -1.09342750 model2 > model1 0.137103
+BIC-corrected       -0.06296284 model2 > model1 0.474898
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A  p-value
+Raw                  -1.8060082 model2 > model1 0.035459
+AIC-corrected        -1.2186896 model2 > model1 0.111481
+BIC-corrected        -0.2501081 model2 > model1 0.401252
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.
+
+============================
+Variable: max_other_drug_score 
+============================
+
+Dispersion (Poisson): 2.36 
+
+AIC Comparison:
+          df      AIC
+pois       2 351.9719
+nb         3 229.6566
+zip        4 273.7516
+zinb       5 227.6919
+hurdle_nb  5 227.6470
+
+BIC Comparison:
+          df      BIC
+pois       2 356.1937
+nb         3 235.9892
+zip        4 282.1951
+zinb       5 238.2462
+hurdle_nb  5 238.2013
+
+AIC Comparison:
+          df      AIC
+pois       2 351.9719
+nb         3 229.6566
+zip        4 273.7516
+zinb       5 227.6919
+hurdle_nb  5 227.6470
+
+BIC Comparison:
+          df      BIC
+pois       2 356.1937
+nb         3 235.9892
+zip        4 282.1951
+zinb       5 238.2462
+hurdle_nb  5 238.2013
+
+Vuong Test: ZIP vs Poisson
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A   p-value
+Raw                   -2.631400 model2 > model1 0.0042517
+AIC-corrected         -2.503383 model2 > model1 0.0061506
+BIC-corrected         -2.368269 model2 > model1 0.0089358
+NULL
+
+Vuong Test: ZINB vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A  p-value
+Raw                  -1.2897574 model2 > model1 0.098567
+AIC-corrected        -0.4248351 model2 > model1 0.335478
+BIC-corrected         0.4880359 model1 > model2 0.312762
+NULL
+
+Vuong Test: Hurdle vs NB
+Vuong Non-Nested Hypothesis Test-Statistic: 
+(test-statistic is asymptotically distributed N(0,1) under the
+ null that the models are indistinguishible)
+-------------------------------------------------------------
+              Vuong z-statistic             H_A  p-value
+Raw                  -1.3077312 model2 > model1 0.095482
+AIC-corrected        -0.4373118 model2 > model1 0.330943
+BIC-corrected         0.4813609 model1 > model2 0.315130
+NULL
+
+Observed Zeros: 146 
+Predicted Zeros:
+$Poisson
+[1] 0
+
+$NB
+[1] 0
+
+$ZIP
+[1] 0
+
+$ZINB
+[1] 0
+
+$Hurdle
+[1] 0
+
+
+--- Summary ---
+- Use NB if overdispersion is present and excess zeros are not excessive.
+- Use ZINB if you believe some people are 'always-zero'.
+- Use Hurdle NB if everyone could have non-zero counts but a barrier (hurdle) prevents some.
+- Use model with lowest AIC/BIC **and** conceptually appropriate assumptions.

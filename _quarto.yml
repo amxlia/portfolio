@@ -13,21 +13,31 @@ book:
     - part: "Introduction"
       chapters: 
       - posts/aboutme.qmd
+      #- more to come 
 
   ## WORKFLOW
     - part: "Workflows"
       chapters:
       - posts/scripts_and_workflow.qmd
       - posts/project_setup.qmd
-    - part: "Analyses"
-    
-    - part: "Plots"
-    - part: "Tables"
-    - part: "Reporting"
     - part: "Projects"
-      # chapters:
-      #   - posts/project_setup.qmd
-  
+      chapters: 
+      - posts/icare.qmd
+      #- more to come 
+    - part: "Analyses"
+      #chapters:
+      #- regression models 
+      #- other 
+
+    # - part: "Plots"
+    # #chapters:
+    #   #- bar plotts
+    #   #- other 
+    # - part: "Tables"
+    # #-chapters:
+    # #apa tables 
+
+
 
 ## APPEARANCE 
 syntax-highlighting: pygments
