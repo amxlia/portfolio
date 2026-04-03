@@ -1,4 +1,4 @@
-Welcome! 
+# Welcome {.unnumbered}
 
 This site is essentially a living lab notebook; a collection of data-related info I have documented throughout my career (e.g., my approaches, projects, learnings, and interests). This includes work in various fields (such as psychology/social psychology, epidemiology), and is built openly and documented thoroughly. 
 

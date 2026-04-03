@@ -1,21 +1,25 @@
 project:
   type: book
-
+toc: false
 book:
-  title: "Amelia Henry | Portfolio"
+  title: "Amelia Henry"
+  search: false
+  
+  # CHAPTERS/STRUCTURE 
   chapters:
     - index.qmd
     - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - part: "Workflows"
+      chapters:
+        - posts/project_setup.qmd
+  
 
-bibliography: references.bib
-
+## APPEARANCE 
+syntax-highlighting: pygments
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
+    code-copy: true
   pdf:
     documentclass: scrreprt
 
