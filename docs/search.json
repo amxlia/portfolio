@@ -272,5 +272,16 @@
       "Workflows",
       "Script Practices"
     ]
+  },
+  {
+    "objectID": "posts/aboutme.html",
+    "href": "posts/aboutme.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I am a Postdoctoral Research Fellow at the University of Sydney, where I am part of the Matilda Centre for Research in Mental Health and Substance Use. My research sits at the intersection of Social Psychology and Epidemiology, with a particular focus on social identity and intergroup relations in relation to mental health, wellbeing, and co-occurring risk behaviours (e.g., alcohol use) and conditions. Currently, I am interested in co-occurring psychological distress and alcohol use problems in adults with ADHD, as well as how ADHD-related relationships and networks may shape these patterns.\nI received my PhD in Social Psychology from Western Sydney University in 2024, completed under the supervision of Professor Craig McGarty and Professor Nida Denson. My PhD examined how advantaged groups strategically use prejudice expression to undermine or demobilise collective action by disadvantaged groups. Across this work, I focused on how people maintain social hierarchies when their group identity is challenged or threatened, and how strategies typically framed as identity management can also function as forms of prejudice expression. This involved a series of studies, including large-scale online surveys, experimental designs, and computational analyses of social media data.\nIn 2022, I joined the Matilda Centre as a Project Coordinator, where I led the development, implementation, and evaluation of Stable Ground, a digital stepped-care intervention for alcohol and other drug use among Australian public safety personnel. Since then, I have worked on a series of epidemiological projects exploring co-occurring psychological distress and alcohol use problems across different groups in Australia, and am currently pursuing the development of my own research program on these comorbidities among adults with ADHD.",
+    "crumbs": [
+      "Introduction",
+      "About Me"
+    ]
   }
 ]

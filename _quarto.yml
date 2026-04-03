@@ -10,6 +10,9 @@ book:
   chapters:
   ## HOME 
     - index.qmd
+    - part: "Introduction"
+      chapters: 
+      - posts/aboutme.qmd
 
   ## WORKFLOW
     - part: "Workflows"
@@ -17,6 +20,7 @@ book:
       - posts/scripts_and_workflow.qmd
       - posts/project_setup.qmd
     - part: "Analyses"
+    
     - part: "Plots"
     - part: "Tables"
     - part: "Reporting"
