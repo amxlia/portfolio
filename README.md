@@ -1,0 +1,13 @@
+Welcome! 
+
+This site is essentially a living lab notebook; a collection of data-related info I have documented throughout my career (e.g., my approaches, projects, learnings, and interests). This includes work in various fields (such as psychology/social psychology, epidemiology), and is built openly and documented thoroughly. 
+
+All data used here is simulated or publicly available, and the focus is not on any particular finding, but my **approach** and **processes** involved in conducting rigorous, transparent, and reproducible research. 
+
+I like to think of this as a portfolio of my work, and a resource for others who are interested in learning about data science and analyses, research methods, and open science. 
+
+For **prospective collaborators and employers**, this serves as a transparent record of how I think through analytical problems and make decisions, how I move from research questions to particular analyses, how I interpret and communicate findings, and how I write code that someone else can potentially learn from and re-use.  
+
+For **students and early career researchers**, this can potentially serve as a practical teaching resource. Each analysis is annotated with *what* I did and *why*. I hope that I can share my learnings and approaches in a way that is useful for others, and that it can be a useful resource for those who are learning about data science, research methods, and open science. 
+
+If you are interested in learning more about my work, have found something useful or have questions, maybe even spotted an error, please feel free to reach out! You can find me on [LinkedIn](https://www.linkedin.com/in/amelia-henry/) or [email](mailto:amelia.henry@sydney.edu.au)
