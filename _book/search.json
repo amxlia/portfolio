@@ -38,5 +38,16 @@
     "crumbs": [
       "References"
     ]
+  },
+  {
+    "objectID": "posts/project_setup.html",
+    "href": "posts/project_setup.html",
+    "title": "Project Setup",
+    "section": "",
+    "text": "How I set up projects and my workflow for data analysis and research.",
+    "crumbs": [
+      "Workflows",
+      "Project Setup"
+    ]
   }
 ]

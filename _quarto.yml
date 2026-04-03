@@ -16,9 +16,11 @@ book:
 
 ## APPEARANCE 
 syntax-highlighting: pygments
+
 format:
   html:
-    theme: cosmo
+    theme: 
+      - custom.css
     code-copy: true
   pdf:
     documentclass: scrreprt
