@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Amelia Henry | Portfolio",
+    "section": "",
+    "text": "Welcome!\nThis site is essentially a living lab notebook; a collection of data-related info I have documented throughout my career (e.g., my approaches, projects, learnings, and interests). This includes work in various fields (such as psychology/social psychology, epidemiology), and is built openly and documented thoroughly.\nAll data used here is simulated or publicly available, and the focus is not on any particular finding, but my approach and processes involved in conducting rigorous, transparent, and reproducible research.\nI like to think of this as a portfolio of my work, and a resource for others who are interested in learning about data science and analyses, research methods, and open science.\nFor prospective collaborators and employers, this serves as a transparent record of how I think through analytical problems and make decisions, how I move from research questions to particular analyses, how I interpret and communicate findings, and how I write code that someone else can potentially learn from and re-use.\nFor students and early career researchers, this can potentially serve as a practical teaching resource. Each analysis is annotated with what I did and why. I hope that I can share my learnings and approaches in a way that is useful for others, and that it can be a useful resource for those who are learning about data science, research methods, and open science.\nIf you are interested in learning more about my work, have found something useful or have questions, maybe even spotted an error, please feel free to reach out! You can find me on LinkedIn or email",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.html</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. (USA) 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
