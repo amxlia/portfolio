@@ -1,2 +1,0 @@
-# Project Setup {.unnumbered}
-How I set up projects and my workflow for data analysis and research.

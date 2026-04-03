@@ -7,11 +7,20 @@ book:
   
   # CHAPTERS/STRUCTURE 
   chapters:
+  ## HOME 
     - index.qmd
-    - intro.qmd
+
+  ## WORKFLOW
     - part: "Workflows"
       chapters:
-        - posts/project_setup.qmd
+      - posts/workflow_research.qmd
+    - part: "Analyses"
+    - part: "Plots"
+    - part: "Tables"
+    - part: "Reporting"
+    - part: "Projects"
+      # chapters:
+      #   - posts/project_setup.qmd
   
 
 ## APPEARANCE 
@@ -20,7 +29,7 @@ syntax-highlighting: pygments
 format:
   html:
     theme: 
-      - custom.css
+      - minty
     code-copy: true
   pdf:
     documentclass: scrreprt

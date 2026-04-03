@@ -1,0 +1,168 @@
+# My Coding Practices {.unnumbered}
+## Purpose: 
+
+- Structure projects properly for reproducibility and transparency
+- Use tools to make workflow easier and more efficient (e.g., R projects, renv, Git/GitHub)
+- Document my workflow and approaches for others to learn from and potentially re-use
+
+## Project set up 
+Usually, I create project root folder and open in Positron (or RStudio as new project)
+```
+project-root/
+├── R/              # this is where all R scripts and functions go 
+├── data/
+│   ├── raw/        # treat as ready only - never edit these files
+│   ├── versions/   # any edits to data should be saved here with version number and date (e.g., survey_data_v1_2024-06-01.csv)
+│   └── final/    # this is where the final data files that are used for analyses/collaboration go (e.g., survey_data_final.csv)
+├── outputs/     # this is where all saved outputs go (e.g., tables, figures, model objects). 
+├── docs/     # this is where all documentation useful for analyses goes (e.g., project proposal, data dictionary, codebook, guides, protocols etc)
+├── renv.lock # this is where the renv lockfile goes (after running renv::snapshot()) which is useful for reproducibility and sharing with collaborators
+```
+Some rules I like to follow:
+
+- treat root as the root folder always (never use `set_wd()` or absolute paths). 
+- use relative paths from root (e.g., `data/raw/survey_data.csv`) and use here::here() to construct paths in code (e.g., `here::here("data/raw/survey_data.csv")`)
+- `data/raw/` is read only - never edit these files. 
+
+### Set up environment (just once)
+```{r, eval=FALSE, run=FALSE}
+# create renv environment and lockfile in root folder 
+# this is useful for reproducibility and sharing with collaborators
+renv::init() 
+
+# install packages that will always be used in the project (e.g., tidyverse, here, etc) 
+# for example: 
+install.packages(c("tidyverse", "here", "renv", "usethis", "devtools"))
+
+# and then snapshot to save in lockfile to  ensure reproducibility and sharing with collaborators
+renv::snapshot()  
+```
+
+## Lock in secrets 
+Sometimes there may be sensitive information that is needed for analyses (e.g., API keys, database credentials). 
+
+I like to use the `usethis` package to create a `.Renviron` file in the root folder and add any secrets there. This file is ignored by Git/GitHub and is not shared with collaborators, so it is a safe place to store sensitive information.
+
+```{r, run=FALSE, evaluate=FALSE, message = FALSE}
+# create .Renviron file in root folder and add secrets there 
+# (e.g., API keys, database credentials)
+usethis::edit_r_environ()
+```
+This will open the `.Renviron` file, and you need to enter the info in the following format:
+
+```
+    API_KEY="your_api_key_here"
+    DB_USERNAME="your_db_username_here"
+    DB_PASSWORD="your_db_password_here"
+```
+
+After saving the `.Renviron` file, you can access the secrets in your R code using `Sys.getenv()` function. For example:
+```{r, run=FALSE, evaluate=FALSE}
+api_key <- Sys.getenv("API_KEY")
+db_username <- Sys.getenv("DB_USERNAME")
+db_password <- Sys.getenv("DB_PASSWORD")
+```
+This way, you can keep your sensitive information secure while still being able to use it in your analyses
+
+## Script organisation
+I start every script with a header that includes the title of the script, the date, and a brief description of what the script does. This helps me and others understand the purpose of the script at a glance.
+
+For example:
+```{r, eval=FALSE, run=FALSE}
+# 01_data_processing.R
+# Date: 2024-06-01
+# Description: This script is for cleaning and processing the raw data from the survey.
+```
+
+I also like to organise my scripts based on the purpose of the script. For example, I might have separate scripts for data processing, running linear models, and utility functions. I will make that clear in the script name and the header of the script, and I will organise the scripts in the `R/` folder based on their purpose.
+
+For example: 
+```
+    R/
+    ├── 01_data_processing.R   # scripts for cleaning and processing data
+    ├── 02_linear_models.R     # scripts for running linear models
+    ├── utilities.R           # scripts for functions that are used across multiple analyses
+    ├── functions_data_processing.R  # scripts for functions that are specific to data processing
+```
+
+## Script length and functions
+I try to keep my scripts relatively short (e.g., less than 200 lines) and I break up my code into functions whenever possible. This makes my code more modular and easier to read and maintain.
+
+If I find that a script is getting too long or has too many functions, I will break it up into multiple scripts based on the purpose of the functions. 
+
+For example, if I have a lot of functions for data processing, I will create a separate script for those functions (e.g., `functions_data_processing.R`) and then source that script in the other scripts that need those functions.
+
+I also make a utility script (e.g., `utilities.R`) for functions that are used across multiple analyses (e.g., a function for creating a specific type of plot that I use in multiple analyses).
+
+This way, I can avoid duplicating code and make it easier to maintain and update my functions in one place.
+
+The rules I tend to follow are:
+- one script = one purpose (e.g., processing data, running linear models, utility functions)
+- keep scripts relatively short, no crazy scripts with 1000+ lines of code
+- extract repeated code into functions (e.g., `R/utilities.R` for functions that are used across multiple analyses, and `R/functions_data_processing.R` for functions that are specific to data processing)
+- use pipes and one step per line to make code more readable and easier to debug (e.g., instead of nesting functions, use pipes to chain them together). For example: 
+
+```{r, eval=FALSE, run=FALSE}
+df |> 
+    dplyr::filter(age > 18) |>
+    dplyr::mutate(age_group = ifelse(age < 30, "young", "old")) |>
+    dplyr::group_by(age_group) |>
+    dplyr::summarise(mean_income = mean(income))
+```
+
+## Sourcing and Targeting 
+If I have multiple scripts, I introduce `targets` to make it clear which script is the main script that should be run to execute the entire workflow. 
+
+For example, I might have a `main.R` script that sources the other scripts in the correct order, and I will make it clear in the header of the `main.R` script that this is the main script that should be run.
+
+I introduce targets after: 
+- we have multiple scripts (e.g., data processing, running linear models, utility functions)
+- we have a clear order in which the scripts should be run (e.g., data processing should be run before running linear models)
+- we want to make it clear to collaborators which script is the main script that should be run to execute the entire workflow.
+
+To do so, I create a `main.R` script that sources the other scripts in the correct order. For example:
+```{r, eval=FALSE, run=FALSE}
+# inside the main.r script:
+list(
+    tar_target(raw, get_data()),
+    tar_target(cleaned, clean_data(raw)),
+    tar_target(model, fit_linear_model(cleaned)),
+    tar_target(plot, create_plot(model))
+)
+```  
+
+Ultimately this helps to make the workflow more organised and easier to understand. It also:
+- Avoids manually re-running scripts in the correct order, which can be error-prone and time-consuming
+- Helps to track the dependencies between scripts and ensures that the workflow is executed in the correct order
+
+### File paths 
+I always use the `here::here()` function to construct file paths in my scripts. 
+For example:
+```{r, eval=FALSE, run=FALSE}
+here::i_am("R/01_data_processing.R")  # this tells here that the root folder is the one that contains the R folder
+```
+By doing this, I can ensure that all file paths in my scripts are relative to the root folder, regardless of where the script is located; which makes my code more portable and easier to share with collaborators.
+
+It also makes importing or saving files easier, as I can use relative paths from the root folder without worrying about the current working directory.
+
+For example, instead of using an absolute path like this:
+```{r, eval=FALSE, run=FALSE}
+data <- read_csv("/Users/username/project-root/data/raw/survey_data.csv")
+```
+
+I would use:
+```{r, eval=FALSE, run=FALSE}
+data <- read_csv(here::here("data/raw/survey_data.csv"))
+```
+This way, I can run the script on any computer without having to change the file paths, as long as the project structure is the same. 
+
+**Note: If you send your collaborators your root folder, they can run the script without having to change any file paths, as long as they do not change the project structure.**
+
+## Naming and structure conventions 
+I try to follow consistent naming conventions for my files, functions, and variables. This makes it easier to understand the purpose of each file, function, and variable at a glance. In practice, this looks like:
+
+- snake_case everywhere: e.g., `psychological_distress", "alcohol_consumption_10_years" 
+- verb-based functions: e.g., `clean_data()`, `fit_linear_model()`, `create_plot()`
+- descriptive data object:  e.g., `df_survey_adolescent`,`model_summary_psychological_distress` 
+
+

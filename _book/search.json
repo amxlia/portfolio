@@ -49,5 +49,93 @@
       "Workflows",
       "Project Setup"
     ]
+  },
+  {
+    "objectID": "posts/workflow_research.html",
+    "href": "posts/workflow_research.html",
+    "title": "My Coding Practices",
+    "section": "",
+    "text": "Purpose:",
+    "crumbs": [
+      "Workflows",
+      "My Coding Practices"
+    ]
+  },
+  {
+    "objectID": "posts/workflow_research.html#project-set-up",
+    "href": "posts/workflow_research.html#project-set-up",
+    "title": "My Coding Practices",
+    "section": "Project set up",
+    "text": "Project set up\nUsually, I create project root folder and open in Positron (or RStudio as new project)\nproject-root/\n├── R/              # this is where all R scripts and functions go \n├── data/\n│   ├── raw/        # treat as ready only - never edit these files\n│   ├── versions/   # any edits to data should be saved here with version number and date (e.g., survey_data_v1_2024-06-01.csv)\n│   └── final/    # this is where the final data files that are used for analyses/collaboration go (e.g., survey_data_final.csv)\n├── outputs/     # this is where all saved outputs go (e.g., tables, figures, model objects). \n├── docs/     # this is where all documentation useful for analyses goes (e.g., project proposal, data dictionary, codebook, guides, protocols etc)\n├── renv.lock # this is where the renv lockfile goes (after running renv::snapshot()) which is useful for reproducibility and sharing with collaborators\nSome rules I like to follow:\n\ntreat root as the root folder always (never use set_wd() or absolute paths).\nuse relative paths from root (e.g., data/raw/survey_data.csv) and use here::here() to construct paths in code (e.g., here::here(\"data/raw/survey_data.csv\"))\ndata/raw/ is read only - never edit these files.\n\n\nSet up environment (just once)\n\n# create renv environment and lockfile in root folder \n# this is useful for reproducibility and sharing with collaborators\nrenv::init() \n\n# install packages that will always be used in the project (e.g., tidyverse, here, etc) \n# for example: \ninstall.packages(c(\"tidyverse\", \"here\", \"renv\", \"usethis\", \"devtools\"))\n\n# and then snapshot to save in lockfile to  ensure reproducibility and sharing with collaborators\nrenv::snapshot()",
+    "crumbs": [
+      "Workflows",
+      "My Coding Practices"
+    ]
+  },
+  {
+    "objectID": "posts/workflow_research.html#lock-in-secrets",
+    "href": "posts/workflow_research.html#lock-in-secrets",
+    "title": "My Coding Practices",
+    "section": "Lock in secrets",
+    "text": "Lock in secrets\nSometimes there may be sensitive information that is needed for analyses (e.g., API keys, database credentials).\nI like to use the usethis package to create a .Renviron file in the root folder and add any secrets there. This file is ignored by Git/GitHub and is not shared with collaborators, so it is a safe place to store sensitive information.\n\n# create .Renviron file in root folder and add secrets there \n# (e.g., API keys, database credentials)\nusethis::edit_r_environ()\n\nThis will open the .Renviron file, and you need to enter the info in the following format:\n    API_KEY=\"your_api_key_here\"\n    DB_USERNAME=\"your_db_username_here\"\n    DB_PASSWORD=\"your_db_password_here\"\nAfter saving the .Renviron file, you can access the secrets in your R code using Sys.getenv() function. For example:\n\napi_key &lt;- Sys.getenv(\"API_KEY\")\ndb_username &lt;- Sys.getenv(\"DB_USERNAME\")\ndb_password &lt;- Sys.getenv(\"DB_PASSWORD\")\n\nThis way, you can keep your sensitive information secure while still being able to use it in your analyses",
+    "crumbs": [
+      "Workflows",
+      "My Coding Practices"
+    ]
+  },
+  {
+    "objectID": "posts/workflow_research.html#purpose",
+    "href": "posts/workflow_research.html#purpose",
+    "title": "My Coding Practices",
+    "section": "",
+    "text": "Structure projects properly for reproducibility and transparency\nUse tools to make workflow easier and more efficient (e.g., R projects, renv, Git/GitHub)\nDocument my workflow and approaches for others to learn from and potentially re-use",
+    "crumbs": [
+      "Workflows",
+      "My Coding Practices"
+    ]
+  },
+  {
+    "objectID": "posts/workflow_research.html#script-organisation",
+    "href": "posts/workflow_research.html#script-organisation",
+    "title": "My Coding Practices",
+    "section": "Script organisation",
+    "text": "Script organisation\nI start every script with a header that includes the title of the script, the date, and a brief description of what the script does. This helps me and others understand the purpose of the script at a glance.\nFor example:\n\n# 01_data_processing.R\n# Date: 2024-06-01\n# Description: This script is for cleaning and processing the raw data from the survey.\n\nI also like to organise my scripts based on the purpose of the script. For example, I might have separate scripts for data processing, running linear models, and utility functions. I will make that clear in the script name and the header of the script, and I will organise the scripts in the R/ folder based on their purpose.\nFor example:\n    R/\n    ├── 01_data_processing.R   # scripts for cleaning and processing data\n    ├── 02_linear_models.R     # scripts for running linear models\n    ├── utilities.R           # scripts for functions that are used across multiple analyses\n    ├── functions_data_processing.R  # scripts for functions that are specific to data processing",
+    "crumbs": [
+      "Workflows",
+      "My Coding Practices"
+    ]
+  },
+  {
+    "objectID": "posts/workflow_research.html#script-length-and-functions",
+    "href": "posts/workflow_research.html#script-length-and-functions",
+    "title": "My Coding Practices",
+    "section": "Script length and functions",
+    "text": "Script length and functions\nI try to keep my scripts relatively short (e.g., less than 200 lines) and I break up my code into functions whenever possible. This makes my code more modular and easier to read and maintain.\nIf I find that a script is getting too long or has too many functions, I will break it up into multiple scripts based on the purpose of the functions.\nFor example, if I have a lot of functions for data processing, I will create a separate script for those functions (e.g., functions_data_processing.R) and then source that script in the other scripts that need those functions.\nI also make a utility script (e.g., utilities.R) for functions that are used across multiple analyses (e.g., a function for creating a specific type of plot that I use in multiple analyses).\nThis way, I can avoid duplicating code and make it easier to maintain and update my functions in one place.\nThe rules I tend to follow are: - one script = one purpose (e.g., processing data, running linear models, utility functions) - keep scripts relatively short, no crazy scripts with 1000+ lines of code - extract repeated code into functions (e.g., R/utilities.R for functions that are used across multiple analyses, and R/functions_data_processing.R for functions that are specific to data processing) - use pipes and one step per line to make code more readable and easier to debug (e.g., instead of nesting functions, use pipes to chain them together). For example:\n\ndf |&gt; \n    dplyr::filter(age &gt; 18) |&gt;\n    dplyr::mutate(age_group = ifelse(age &lt; 30, \"young\", \"old\")) |&gt;\n    dplyr::group_by(age_group) |&gt;\n    dplyr::summarise(mean_income = mean(income))",
+    "crumbs": [
+      "Workflows",
+      "My Coding Practices"
+    ]
+  },
+  {
+    "objectID": "posts/workflow_research.html#sourcing-and-targeting",
+    "href": "posts/workflow_research.html#sourcing-and-targeting",
+    "title": "My Coding Practices",
+    "section": "Sourcing and Targeting",
+    "text": "Sourcing and Targeting\nIf I have multiple scripts, I introduce targets to make it clear which script is the main script that should be run to execute the entire workflow.\nFor example, I might have a main.R script that sources the other scripts in the correct order, and I will make it clear in the header of the main.R script that this is the main script that should be run.\nI introduce targets after: - we have multiple scripts (e.g., data processing, running linear models, utility functions) - we have a clear order in which the scripts should be run (e.g., data processing should be run before running linear models) - we want to make it clear to collaborators which script is the main script that should be run to execute the entire workflow.\nTo do so, I create a main.R script that sources the other scripts in the correct order. For example:\n\n# inside the main.r script:\nlist(\n    tar_target(raw, get_data()),\n    tar_target(cleaned, clean_data(raw)),\n    tar_target(model, fit_linear_model(cleaned)),\n    tar_target(plot, create_plot(model))\n)\n\nUltimately this helps to make the workflow more organised and easier to understand. It also: - Avoids manually re-running scripts in the correct order, which can be error-prone and time-consuming - Helps to track the dependencies between scripts and ensures that the workflow is executed in the correct order\n\nFile paths\nI always use the here::here() function to construct file paths in my scripts. For example:\n\nhere::i_am(\"R/01_data_processing.R\")  # this tells here that the root folder is the one that contains the R folder\n\nBy doing this, I can ensure that all file paths in my scripts are relative to the root folder, regardless of where the script is located; which makes my code more portable and easier to share with collaborators.\nIt also makes importing or saving files easier, as I can use relative paths from the root folder without worrying about the current working directory.\nFor example, instead of using an absolute path like this:\n\ndata &lt;- read_csv(\"/Users/username/project-root/data/raw/survey_data.csv\")\n\nI would use:\n\ndata &lt;- read_csv(here::here(\"data/raw/survey_data.csv\"))\n\nThis way, I can run the script on any computer without having to change the file paths, as long as the project structure is the same.\nNote: If you send your collaborators your root folder, they can run the script without having to change any file paths, as long as they do not change the project structure.",
+    "crumbs": [
+      "Workflows",
+      "My Coding Practices"
+    ]
+  },
+  {
+    "objectID": "posts/workflow_research.html#naming-and-structure-conventions",
+    "href": "posts/workflow_research.html#naming-and-structure-conventions",
+    "title": "My Coding Practices",
+    "section": "Naming and structure conventions",
+    "text": "Naming and structure conventions\nI try to follow consistent naming conventions for my files, functions, and variables. This makes it easier to understand the purpose of each file, function, and variable at a glance. In practice, this looks like:\n\nsnake_case everywhere: e.g., `psychological_distress”, “alcohol_consumption_10_years”\nverb-based functions: e.g., clean_data(), fit_linear_model(), create_plot()\ndescriptive data object: e.g., df_survey_adolescent,model_summary_psychological_distress",
+    "crumbs": [
+      "Workflows",
+      "My Coding Practices"
+    ]
   }
 ]
