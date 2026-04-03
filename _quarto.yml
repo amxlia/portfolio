@@ -32,8 +32,4 @@ format:
     theme: 
       - minty
     code-copy: true
-  pdf:
-    documentclass: scrreprt
-
-
-
+  
