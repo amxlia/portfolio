@@ -1,7 +1,7 @@
 # Negative Binomial Hurdle Models with Zero-Heavy Count Data {.unnumbered}
 ## Modelling Alcohol and Other Drug Use, Psychological Distress, and Occupational Functioning in Australian Public Safety Personnel
 
-(full script at bottom of page)
+(full script at bottom of page to come)
 
 ## Research Question/Aims
 1. Examine rates of severity of alcohol and other drug (AOD) use among public safety personnel (PSP)
@@ -41,24 +41,27 @@ Initial visualisation of absenteeism and presenteeism showed:
 - strong right-skew 
 - large proportion of zeros 
 ```{r plot1, warning = FALSE, message = FALSE}
-df %>% 
+df %>%
   dplyr::select(
-    Absenteeism = k10_11_absenteeism, Presenteeism = k10_12_presenteeism) |> 
+    Absenteeism = k10_11_absenteeism,
+    Presenteeism = k10_12_presenteeism
+  ) |>
   pivot_longer(
     cols = c(Absenteeism, Presenteeism),
     names_to = "Variable",
-    values_to = "Days") |> 
-    filter(!is.na(Days)) |> 
-    gghistogram(
-        x = "Days", 
-        y = "count", 
-        xlab = "Days", 
-        ylab = FALSE, 
-        add = "median",
-        facet.by = "Variable", 
-        binwidth = 1
-    ) +
-    scale_x_continuous(breaks = seq(0, 30, by = 2))
+    values_to = "Days"
+  ) |>
+  filter(!is.na(Days)) |>
+  gghistogram(
+    x = "Days",
+    y = "count",
+    xlab = "Days",
+    ylab = FALSE,
+    add = "median",
+    facet.by = "Variable",
+    binwidth = 1
+  ) +
+  scale_x_continuous(breaks = seq(0, 30, by = 5))
 ```
 
 **note: suggests standard linear models would be inappropriate. count-based better** 
@@ -104,7 +107,5 @@ Once Hurdle Models were chosen, each predictor was first examined in isolation t
 
 - identify potential associations
 - understand variable-specific effects 
-- provide context before multivariable analyses 
-
-
+- identify which covariates to include in multivariable analysis
 

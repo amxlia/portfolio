@@ -24,7 +24,7 @@ book:
       chapters: 
       - posts/icare.qmd
       #- more to come 
-    - part: "Analyses"
+   # - part: "Analyses"
       #chapters:
       #- regression models 
       #- other 
