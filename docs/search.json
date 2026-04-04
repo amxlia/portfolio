@@ -355,7 +355,40 @@
     "href": "posts/icare.html#modelling-strategy",
     "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
     "section": "Modelling strategy",
-    "text": "Modelling strategy\n\nUnivariate models - all types\nHere I made a function that ran a series of univariate models on each outcome to check dispersion This helped to evaluate which count model handled the outcome data the best. Univariate predictors included age, gender, years of employment, k10 total score, maximum alcohol use risk score, and maximum other drug use risk score.\nModels were compared using: AIC/BIC (fit), dispersion stats, vuong tests, predicted vs observed zeros.\nAlthough zero-inflated models and hurdle models were basically the same, MS and I discussed the choice from a conceptual angle, and we agreed that the zero-inflation was too rigid with the “always-zero” or “always at-risk” approach.\nGiven we are looking at absenteeism and presenteeism, days of each is unlikely to be always.\nSo we chose Hurdle Negative Binomial Models.\n\nReasons:\n\nthey count for overdispersion\nexplicitly model the probability of any absenteeism/presenteeism (logistic) and the frequency of absenteeism/presenteeism among those who didn’t have zero values (count)\nconceptually, they distinguish between whether someone is absent and how often they are absent.\nmore aligned with our aims/RQs\n\nOnce Hurdle Models were chosen, each predictor was first examined in isolation to:\n\nidentify potential associations\nunderstand variable-specific effects\nidentify which covariates to include in multivariable analysis",
+    "text": "Modelling strategy\n\nUnivariate models - all types\nHere I made a function that ran a series of univariate models on each outcome to check dispersion This helped to evaluate which count model handled the outcome data the best. Univariate predictors included age, gender, years of employment, k10 total score, maximum alcohol use risk score, and maximum other drug use risk score.\nModels were compared using: AIC/BIC (fit), dispersion stats, vuong tests, predicted vs observed zeros.\nAlthough zero-inflated models and hurdle models were basically the same, MS and I discussed the choice from a conceptual angle, and we agreed that the zero-inflation was too rigid with the “always-zero” or “always at-risk” approach.\nGiven we are looking at absenteeism and presenteeism, days of each is unlikely to be always.\nSo we chose Hurdle Negative Binomial Models.\n\nReasons:\n\nthey count for overdispersion\nexplicitly model the probability of any absenteeism/presenteeism (logistic) and the frequency of absenteeism/presenteeism among those who didn’t have zero values (count)\nconceptually, they distinguish between whether someone is absent and how often they are absent.\nmore aligned with our aims/RQs\n\nOnce Hurdle Models were chosen, each predictor was first examined in isolation to:\n\nidentify potential associations\nunderstand variable-specific effects\nidentify which covariates to include in multivariable analysis\n\n\n\nInsights:\nabsenteeism:",
+    "crumbs": [
+      "Projects",
+      "Negative Binomial Hurdle Models with Zero-Heavy Count Data"
+    ]
+  },
+  {
+    "objectID": "posts/icare.html#descriptives",
+    "href": "posts/icare.html#descriptives",
+    "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
+    "section": "Descriptives",
+    "text": "Descriptives\n\ndo rates tables\ndo cor tables",
+    "crumbs": [
+      "Projects",
+      "Negative Binomial Hurdle Models with Zero-Heavy Count Data"
+    ]
+  },
+  {
+    "objectID": "posts/icare.html#model-selection---univariate-models",
+    "href": "posts/icare.html#model-selection---univariate-models",
+    "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
+    "section": "Model selection - Univariate models",
+    "text": "Model selection - Univariate models\nGiven the distributional properties of absenteeism and presenteeism, I considered several candidate models:\n\nPoisson regression\nNegative binomial regression\nZero-inflated Poisson (ZIP)\nZero-inflated negative binomial models (ZINB)\nHurdle negative binomial models\n\n\nConsiderations:\nOverdispersion: Poisson models assume that the mean = variance. Preliminary checks indicated overdispersion, making Poisson models unsuitable.\nExcess zeros: The data contained more zeros than expected under standard count models. This raises 2 choices:\n\nZero inflated models: assume two latent groups (always-zero vs always at-risk)\nHurdle models: assume a two-stage process (zero vs positive counts)\n\nHere I made a function that ran a series of univariate models on each outcome to check dispersion This helped to evaluate which count model handled the outcome data the best. Univariate predictors included age, gender, years of employment, k10 total score, maximum alcohol use risk score, and maximum other drug use risk score.\nModels were compared using: AIC/BIC (fit), dispersion stats, vuong tests, predicted vs observed zeros.\nAlthough zero-inflated models and hurdle models were basically the same, MS and I discussed the choice from a conceptual angle, and we agreed that the zero-inflation was too rigid with the “always-zero” or “always at-risk” approach.\nGiven we are looking at absenteeism and presenteeism, days of each is unlikely to be always.\nSo we chose Hurdle Negative Binomial Models.\n\nReasons:\n\nthey count for overdispersion\nexplicitly model the probability of any absenteeism/presenteeism (logistic) and the frequency of absenteeism/presenteeism among those who didn’t have zero values (count)\nconceptually, they distinguish between whether someone is absent and how often they are absent.\nmore aligned with our aims/RQs",
+    "crumbs": [
+      "Projects",
+      "Negative Binomial Hurdle Models with Zero-Heavy Count Data"
+    ]
+  },
+  {
+    "objectID": "posts/icare.html#modelling",
+    "href": "posts/icare.html#modelling",
+    "title": "Negative Binomial Hurdle Models with Zero-Heavy Count Data",
+    "section": "Modelling",
+    "text": "Modelling\n\nUnivariate models - Hurdle\nOnce Hurdle Models were chosen, each predictor was first examined in isolation to:\n\nidentify potential associations\nunderstand variable-specific effects\nidentify which covariates to include in multivariable analysis\n\n\nInsights:\nabsenteeism:",
     "crumbs": [
       "Projects",
       "Negative Binomial Hurdle Models with Zero-Heavy Count Data"

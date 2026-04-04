@@ -277,8 +277,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>note: suggests standard linear models would be inappropriate. count-based better</strong></p>
 </section>
-<section id="model-selection" class="level2">
-<h2 class="anchored" data-anchor-id="model-selection">Model selection</h2>
+<section id="descriptives" class="level2">
+<h2 class="anchored" data-anchor-id="descriptives">Descriptives</h2>
+<ul>
+<li>do rates tables</li>
+<li>do cor tables</li>
+</ul>
+</section>
+<section id="model-selection---univariate-models" class="level2">
+<h2 class="anchored" data-anchor-id="model-selection---univariate-models">Model selection - Univariate models</h2>
 <p>Given the distributional properties of absenteeism and presenteeism, I considered several candidate models:</p>
 <ul>
 <li>Poisson regression</li>
@@ -295,12 +302,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Zero inflated models: assume two latent groups (always-zero vs always at-risk)</li>
 <li>Hurdle models: assume a two-stage process (zero vs positive counts)</li>
 </ul>
-</section>
-</section>
-<section id="modelling-strategy" class="level2">
-<h2 class="anchored" data-anchor-id="modelling-strategy">Modelling strategy</h2>
-<section id="univariate-models---all-types" class="level3">
-<h3 class="anchored" data-anchor-id="univariate-models---all-types">Univariate models - all types</h3>
 <p><strong>Here I made a function that ran a series of univariate models on each outcome to check dispersion</strong> This helped to evaluate which count model handled the outcome data the best. Univariate predictors included age, gender, years of employment, k10 total score, maximum alcohol use risk score, and maximum other drug use risk score.</p>
 <p>Models were compared using: AIC/BIC (fit), dispersion stats, vuong tests, predicted vs observed zeros.</p>
 <p>Although zero-inflated models and hurdle models were basically the same, MS and I discussed the choice from a conceptual angle, and we agreed that the zero-inflation was too rigid with the “always-zero” or “always at-risk” approach.</p>
@@ -314,12 +315,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>conceptually, they distinguish between whether someone is absent and how often they are absent.</li>
 <li>more aligned with our aims/RQs</li>
 </ul>
+</section>
+</section>
+</section>
+<section id="modelling" class="level2">
+<h2 class="anchored" data-anchor-id="modelling">Modelling</h2>
+<section id="univariate-models---hurdle" class="level3">
+<h3 class="anchored" data-anchor-id="univariate-models---hurdle">Univariate models - Hurdle</h3>
 <p>Once Hurdle Models were chosen, each predictor was first examined in isolation to:</p>
 <ul>
 <li>identify potential associations</li>
 <li>understand variable-specific effects</li>
 <li>identify which covariates to include in multivariable analysis</li>
 </ul>
+<section id="insights" class="level4">
+<h4 class="anchored" data-anchor-id="insights">Insights:</h4>
+<p><strong>absenteeism:</strong></p>
 
 
 </section>

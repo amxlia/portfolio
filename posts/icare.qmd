@@ -66,7 +66,11 @@ df %>%
 
 **note: suggests standard linear models would be inappropriate. count-based better** 
 
-## Model selection 
+## Descriptives 
+- do rates tables 
+- do cor tables 
+
+## Model selection - Univariate models 
 Given the distributional properties of absenteeism and presenteeism, I considered several candidate models:
 
 - Poisson regression
@@ -83,8 +87,6 @@ Given the distributional properties of absenteeism and presenteeism, I considere
 - Zero inflated models: assume two latent groups (always-zero vs always at-risk) 
 - Hurdle models: assume a two-stage process (zero vs positive counts) 
 
-## Modelling strategy 
-### Univariate models - all types 
 **Here I made a function that ran a series of univariate models on each outcome to check dispersion**
 This helped to evaluate which count model handled the outcome data the best. 
 Univariate predictors included age, gender, years of employment, k10 total score, maximum alcohol use risk score, and maximum other drug use risk score. 
@@ -103,9 +105,14 @@ So we chose **Hurdle Negative Binomial Models.**
 - conceptually, they distinguish between whether someone is absent and how often they are absent. 
 - more aligned with our aims/RQs 
 
+
+## Modelling  
+### Univariate models - Hurdle
 Once Hurdle Models were chosen, each predictor was first examined in isolation to:
 
 - identify potential associations
 - understand variable-specific effects 
 - identify which covariates to include in multivariable analysis
 
+#### Insights:
+**absenteeism:**
